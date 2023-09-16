@@ -1,0 +1,32 @@
+{
+  "name": "horizontal-scroll",
+  "version": "0.0.1",
+  "author": "Olzhas Kurikov, Dinmuhamed Sailaubek",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olzh2102/horizontal-scroll"
+  },
+  "main": "out/index.js",
+  "module": "out/index.js",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/react": "^18.2.7",
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "typescript": "^5.0.0"
+  },
+  "description": "React component for horizontal scrolling",
+  "keywords": [
+    "React",
+    "JavaScript",
+    "WebAPI"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "bun build ./src/index.tsx --outdir ./out --minify"
+  },
+  "type": "module",
+  "types": "out/index.d.ts"
+}

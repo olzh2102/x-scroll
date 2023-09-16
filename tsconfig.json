@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2023", "dom"],
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "allowImportingTsExtensions": true,
+    "composite": true,
+    "strict": true,
+    "downlevelIteration": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowJs": true,
+    "outDir": "out",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "types": [
+      "src/index.d.ts",
+      "bun-types" // add Bun global
+    ],
+    "noUncheckedIndexedAccess": true,
+  }
+}
