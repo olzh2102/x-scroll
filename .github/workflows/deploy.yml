@@ -29,6 +29,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           working-directory: examplets
+          browser: chrome
           build: bun run build
           start: bun run dev
 
