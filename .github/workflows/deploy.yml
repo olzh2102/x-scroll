@@ -6,6 +6,10 @@ on:
       - main
       - dev
 
+defaults:
+  run:
+    working-directory: examplets
+
 jobs:
   integration-test:
     name: 🏇 Testing ur horseshit with Cypress
@@ -23,6 +27,9 @@ jobs:
 
       - name: 🌽 Cypress run
         uses: cypress-io/github-action@v6
+        with:
+          build: bun run build
+          start: bun run dev
 
   # publish:
   #   name: 📰 Publish ur horseshit
