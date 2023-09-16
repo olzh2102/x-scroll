@@ -12,15 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     environment: testing
     steps:
-      - name: ⬇️ Checkout the branch
+      - name: 🍵 Checkout the branch
         uses: actions/checkout@v4
 
-      - name: Download deps
-        uses: bahmutov/npm-install@v1
-        with:
-          working-directory: examplets
+      - name: 🥟 Setup bun
+        uses: oven-sh/setup-bun@v1
 
-      - name: Cypress run
+      - name: 🥞 Install dependencies
+        run: bun install
+
+      - name: 🌽 Cypress run
         uses: cypress-io/github-action@v6
 
   # publish:
