@@ -23,14 +23,14 @@ jobs:
         uses: oven-sh/setup-bun@v1
 
       - name: 🥞 Install dependencies
-        run: bun install
+        run: bun install -y
 
       - name: 🌽 Cypress run
         uses: cypress-io/github-action@v6
         with:
           working-directory: examplets
           build: bun run build
-          start: bunx cypress run
+          start: bun run dev
 
   # publish:
   #   name: 📰 Publish ur horseshit
