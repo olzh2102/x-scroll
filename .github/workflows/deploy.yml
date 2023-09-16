@@ -30,7 +30,7 @@ jobs:
         with:
           working-directory: examplets
           build: bun run build
-          start: bun run dev
+          start: bunx cypress run
 
   # publish:
   #   name: 📰 Publish ur horseshit
