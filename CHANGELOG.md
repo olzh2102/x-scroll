@@ -1,5 +1,15 @@
 # x-scroll
 
+## 0.1.0
+
+### Minor Changes
+
+- fd443b1: Move typescript as dev dependency
+
+### Patch Changes
+
+- 4808352: test
+
 ## 0.0.2
 
 ### Patch Changes
