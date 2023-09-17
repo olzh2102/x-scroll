@@ -9,7 +9,7 @@ type Props = {
   className?: string;
 };
 
-export default function Scroller({
+export function Scroller({
   children,
   direction = "horizontal",
   scrollRate = 0.5,
@@ -21,7 +21,7 @@ export default function Scroller({
     const target = ref.current;
     if (!target || direction === "vertical") return;
 
-    function onWheel(e: any) {
+    function onWheel(e: WheelEvent) {
       e.preventDefault();
 
       const isReachedRight = target.scrollLeft === 0;
@@ -57,3 +57,5 @@ export default function Scroller({
     </div>
   );
 }
+
+export default Scroller;

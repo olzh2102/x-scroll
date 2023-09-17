@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+defaults:
+  run:
+    working-directory: examplets
+
+jobs:
+  integration-test:
+    name: 🏇 Testing ur horseshit with Cypress
+    runs-on: ubuntu-latest
+    environment: testing
+    steps:
+      - name: 🍵 Checkout the branch
+        uses: actions/checkout@v4
+
+      - name: 🥟 Setup bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: 🥞 Install dependencies
+        run: bun install -y
+
+      - name: 🌽 Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          working-directory: examplets
+          browser: chrome
+          build: bun run build
+          start: bun run dev
