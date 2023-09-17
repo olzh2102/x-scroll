@@ -11,6 +11,10 @@
     "type": "git",
     "url": "https://github.com/olzh2102/x-scroll"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "main": "out/index.js",
   "module": "out/index.js",
   "types": "out/index.d.ts",
