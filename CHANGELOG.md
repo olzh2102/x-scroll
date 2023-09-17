@@ -1,5 +1,11 @@
 # x-scroll
 
+## 0.1.1
+
+### Patch Changes
+
+- 48579dd: TS to devdep
+
 ## 0.1.0
 
 ### Minor Changes
