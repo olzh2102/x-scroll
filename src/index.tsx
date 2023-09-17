@@ -1,26 +1,26 @@
-import { useRef, useEffect } from "react";
-import type { ReactNode } from "react";
+import * as React from "react";
 
 import styles from "./index.module.css";
 
 type Props = {
-  children: ReactNode;
+  children: React.ReactNode;
   direction?: "horizontal" | "vertical";
   scrollRate?: number;
   className?: string;
 };
 
-export default function Scroller({
+export function Scroller({
   children,
   direction = "horizontal",
   scrollRate = 0.5,
   className = "",
 }: Props) {
-  const ref = useRef<any>(null);
+  const ref = React.useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  React.useEffect(() => {
     const target = ref.current;
-    if (!target || direction === "vertical") return;
+
+    if (!ref.current || direction === "vertical") return;
 
     function onWheel(e: WheelEvent) {
       e.preventDefault();
@@ -45,16 +45,21 @@ export default function Scroller({
   }, [direction, scrollRate]);
 
   return (
-    <div
-      ref={ref}
-      className={`
-        hidden-scrollbar 
-        ${styles.base} 
-        ${direction === "horizontal" ? styles.horizontal : styles.vertical} 
-        ${className}
+    <>
+      <h1>hey yo</h1>
+      <div
+        ref={ref}
+        className={`
+      hidden-scrollbar
+      ${styles.base}
+      ${direction === "horizontal" ? styles.horizontal : styles.vertical}
+      ${className}
       `}
-    >
-      {children}
-    </div>
+      >
+        {children}
+      </div>
+    </>
   );
 }
+
+export default Scroller;

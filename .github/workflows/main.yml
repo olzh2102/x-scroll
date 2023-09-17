@@ -1,10 +1,9 @@
-name: Publish to NPM
+name: CI
 
 on:
-  push:
+  pull_request:
     branches:
       - main
-      - dev
 
 defaults:
   run:
@@ -32,8 +31,3 @@ jobs:
           browser: chrome
           build: bun run build
           start: bun run dev
-
-  # publish:
-  #   name: 📰 Publish ur horseshit
-  #   runs-on: ubuntu-latest
-  #   needs: integration-test

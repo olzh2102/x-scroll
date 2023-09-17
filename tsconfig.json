@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "lib": ["ES2023", "dom"],
+    "lib": ["dom.iterable", "dom", "esnext"],
     "module": "esnext",
-    "target": "esnext",
+    "target": "es5",
     "moduleResolution": "bundler",
     "moduleDetection": "force",
     "allowImportingTsExtensions": true,

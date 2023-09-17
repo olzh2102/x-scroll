@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  publish:
+    name: 📰 Publish ur horseshit to NPM
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🍵 Checkout the branch
+        uses: actions/checkout@v4
+
+      - name: 🥟 Setup bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: 🥞 Install dependencies
+        run: bun install -y
+
+      - name: 👩‍🎨 Create Release Pull Request or Publish
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: bun run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

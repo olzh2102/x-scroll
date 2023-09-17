@@ -1,17 +1,19 @@
 {
-  "name": "horizontal-scroll",
+  "name": "x-scroll",
   "version": "0.0.1",
   "author": "Olzhas Kurikov, Dinmuhamed Sailaubek",
   "repository": {
     "type": "git",
-    "url": "https://github.com/olzh2102/horizontal-scroll"
+    "url": "https://github.com/olzh2102/x-scroll"
   },
   "main": "out/index.js",
   "module": "out/index.js",
+  "types": "out/index.d.ts",
   "devDependencies": {
     "@changesets/cli": "^2.26.2",
     "@types/react": "^18.2.7",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "tsup": "^7.2.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
@@ -25,8 +27,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "bun build ./src/index.tsx --outdir ./out --minify"
+    "release": "bun run build && changeset publish",
+    "build": "bun build ./src/index.tsx --outdir ./out --minify --external react --external tsup && tsup ./src/index.tsx --out-dir ./out --dts --dts-only --format ts"
   },
-  "type": "module",
-  "types": "out/index.d.ts"
+  "type": "module"
 }
