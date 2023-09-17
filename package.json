@@ -18,11 +18,11 @@
     "@changesets/cli": "^2.26.2",
     "@types/react": "^18.2.7",
     "bun-types": "latest",
-    "tsup": "^7.2.0"
+    "tsup": "^7.2.0",
+    "typescript": "^5.0.2"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "typescript": "^5.0.2"
+    "react": "^18.2.0"
   },
   "description": "React component for horizontal scrolling",
   "license": "MIT",
