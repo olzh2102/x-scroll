@@ -2,6 +2,11 @@
   "name": "x-scroll",
   "version": "0.0.2",
   "author": "Olzhas Kurikov, Dinmuhamed Sailaubek",
+  "keywords": [
+    "React",
+    "JavaScript",
+    "WebAPI"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/olzh2102/x-scroll"
@@ -20,11 +25,6 @@
     "react": "^18.2.0"
   },
   "description": "React component for horizontal scrolling",
-  "keywords": [
-    "React",
-    "JavaScript",
-    "WebAPI"
-  ],
   "license": "MIT",
   "scripts": {
     "release": "bun run build && changeset publish",
