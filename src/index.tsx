@@ -1,7 +1,5 @@
 import * as React from "react";
 
-import styles from "./index.module.css";
-
 type Props = {
   children: React.ReactNode;
   direction?: "horizontal" | "vertical";
@@ -15,50 +13,41 @@ export function Scroller({
   scrollRate = 0.5,
   className = "",
 }: Props) {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const style = {
+    vertical: { overflowY: "scroll" },
+    horizontal: { overflowX: "scroll" },
+  };
 
-  React.useEffect(() => {
-    const target = ref.current;
+  function scroll(scrollRate: number) {
+    return (e: React.WheelEvent) => {
+      if (direction === "vertical") return;
 
-    if (!ref.current || direction === "vertical") return;
+      const container = e.currentTarget;
 
-    function onWheel(e: WheelEvent) {
-      e.preventDefault();
-
-      const isReachedRight = target.scrollLeft === 0;
+      const isReachedRight = container.scrollLeft === 0;
 
       const isReachedLeft =
-        target.scrollWidth - target.getBoundingClientRect().width ===
-        target.scrollLeft;
+        container.scrollWidth - container.getBoundingClientRect().width ===
+        container.scrollLeft;
 
-      if (!isReachedRight && !isReachedLeft) e.stopPropagation();
+      if (!isReachedRight && !isReachedLeft) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
 
-      target.scrollLeft += e.deltaY * scrollRate;
-      target.scrollLeft += e.deltaX * scrollRate;
-    }
-
-    target.addEventListener("wheel", onWheel);
-
-    return () => {
-      target.removeEventListener("wheel", onWheel);
+      container.scrollLeft += e.deltaY * scrollRate;
+      container.scrollLeft += e.deltaX * scrollRate;
     };
-  }, [direction, scrollRate]);
+  }
 
   return (
-    <>
-      <h1>hey yo</h1>
-      <div
-        ref={ref}
-        className={`
-      hidden-scrollbar
-      ${styles.base}
-      ${direction === "horizontal" ? styles.horizontal : styles.vertical}
-      ${className}
-      `}
-      >
-        {children}
-      </div>
-    </>
+    <div
+      onWheel={scroll(scrollRate)}
+      style={style[direction]}
+      className={className}
+    >
+      {children}
+    </div>
   );
 }
 
