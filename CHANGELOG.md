@@ -1,5 +1,11 @@
 # x-scroll
 
+## 0.3.0
+
+### Minor Changes
+
+- d514666: Need to change package name to publish
+
 ## 0.2.0
 
 ### Minor Changes
