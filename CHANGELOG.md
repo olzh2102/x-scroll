@@ -1,5 +1,12 @@
 # x-scroll
 
+## 0.2.0
+
+### Minor Changes
+
+- eeb2810: public access
+- 57c3f8e: Rewrite onWheel without using useRef
+
 ## 0.1.1
 
 ### Patch Changes
