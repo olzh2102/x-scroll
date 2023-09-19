@@ -1,5 +1,11 @@
 # x-scroll
 
+## 0.2.1
+
+### Patch Changes
+
+- 8a61174: Rename
+
 ## 0.3.0
 
 ### Minor Changes
