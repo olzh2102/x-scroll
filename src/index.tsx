@@ -43,7 +43,7 @@ export function Scroller({
   return (
     <div
       onWheel={scroll(scrollRate)}
-      style={style[direction]}
+      style={style[direction] as React.CSSProperties}
       className={className}
     >
       {children}
