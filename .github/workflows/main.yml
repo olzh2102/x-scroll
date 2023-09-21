@@ -6,7 +6,7 @@ on:
 
 defaults:
   run:
-    working-directory: examplets
+    working-directory: example
 
 jobs:
   integration-test:
