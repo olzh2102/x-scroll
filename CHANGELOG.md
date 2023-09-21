@@ -1,5 +1,11 @@
 # x-scroll
 
+## 1.0.1
+
+### Patch Changes
+
+- b932079: npm ignore example folder
+
 ## 1.0.0
 
 ### Major Changes
