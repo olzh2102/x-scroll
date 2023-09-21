@@ -3,6 +3,6 @@ src
 bun.lockb
 tsconfig.json
 .gitignore
-examplets
+example
 .github
 .changeset
