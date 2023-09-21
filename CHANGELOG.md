@@ -1,5 +1,11 @@
 # x-scroll
 
+## 1.0.2
+
+### Patch Changes
+
+- c96b073: remove hero image from npm registry
+
 ## 1.0.1
 
 ### Patch Changes
