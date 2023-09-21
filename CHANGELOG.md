@@ -1,5 +1,11 @@
 # x-scroll
 
+## 1.0.0
+
+### Major Changes
+
+- 50fb614: Package rename, Readme update, basic cypress test case
+
 ## 0.2.1
 
 ### Patch Changes
