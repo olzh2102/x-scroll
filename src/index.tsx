@@ -1,54 +1,55 @@
-import * as React from "react";
+import * as React from 'react'
 
 type Props = {
-  children: React.ReactNode;
-  direction?: "horizontal" | "vertical";
-  scrollRate?: number;
-  className?: string;
-};
+  direction?: 'horizontal' | 'vertical'
+  scrollRate?: number
+} & Omit<React.HTMLProps<HTMLDivElement>, 'onWheel'>
 
 export function Scroller({
   children,
-  direction = "horizontal",
+  style: s,
+  direction = 'horizontal',
   scrollRate = 0.5,
-  className = "",
+  ...rest
 }: Props) {
   const style = {
-    vertical: { overflowY: "scroll" },
-    horizontal: { overflowX: "scroll" },
-  };
+    vertical: { overflowY: 'scroll' },
+    horizontal: { overflowX: 'scroll', display: 'flex' },
+  }
 
   function scroll(scrollRate: number) {
     return (e: React.WheelEvent) => {
-      if (direction === "vertical") return;
+      if (direction === 'vertical') return
 
-      const container = e.currentTarget;
+      const container = e.currentTarget
+      const containerWidth = container.getBoundingClientRect().width
 
-      const isReachedRight = container.scrollLeft === 0;
+      const isReachedLeftEdge = container.scrollLeft === 0
 
-      const isReachedLeft =
-        container.scrollWidth - container.getBoundingClientRect().width ===
-        container.scrollLeft;
+      const isReachedRightEdge = container.scrollLeft === container.scrollWidth - containerWidth
 
-      if (!isReachedRight && !isReachedLeft) {
-        e.preventDefault();
-        e.stopPropagation();
+      if (!isReachedLeftEdge && !isReachedRightEdge) {
+        e.preventDefault()
+        e.stopPropagation()
       }
 
-      container.scrollLeft += e.deltaY * scrollRate;
-      container.scrollLeft += e.deltaX * scrollRate;
-    };
+      container.scrollLeft += e.deltaY * scrollRate
+      container.scrollLeft += e.deltaX * scrollRate
+    }
   }
 
   return (
     <div
       onWheel={scroll(scrollRate)}
-      style={style[direction] as React.CSSProperties}
-      className={className}
+      style={{
+        ...s,
+        ...(style[direction] as React.CSSProperties),
+      }}
+      {...rest}
     >
       {children}
     </div>
-  );
+  )
 }
 
-export default Scroller;
+export default Scroller

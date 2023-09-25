@@ -4,11 +4,54 @@ Scrollbun is a lightweight and customizable React component that allow you effor
 
 ![cover gif image](./hero.gif)
 
+## Installation
 To install dependencies:
 
 ```bash
-bun install scrollerbun
+npm install scrollbun
+bun install scrollbun
 ```
+
+## Usage
+Here's an example of usage:
+
+```javascript
+import Scrollbun from 'scrollbun'
+
+function App() {
+  return (
+    <Scrollbun style={{ width: '500px' }}>
+      <div style={{ width: '500px', height: '300px' }} />
+      <div style={{ width: '500px', height: '300px' }} />
+    </Scrollbun>
+  )
+}
+```
+
+## Props
+
+<table>
+  <tr>
+    <th>Prop name</th>
+    <th>Description</th>
+    <th>Default value</th>
+  </tr>
+  <tr>
+    <td>direction</td>
+    <td>Can be <code>'horizontal'</code> or <code>'vertical'</code>.</td>
+    <td><code>'horizontal'</code></td>
+  </tr>
+  <tr>
+    <td>scrollRate</td>
+    <td>A number to control scroll rate.</td>
+    <td>0.5</td>
+  </tr>
+  <tr>
+    <td>...rest</td>
+    <td>any <code>HTMLDivElement</code> prop, except <code>onWheel</code>, that will be added to the main <code>div</code> element.</td>
+    <td>n/a</td>
+  </tr>
+</table>
 
 ## Contributors ✨
 

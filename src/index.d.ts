@@ -1,12 +1,10 @@
-import * as React from "react";
+import * as React from 'react'
 
 type Props = {
-  children: React.ReactNode;
-  direction?: "horizontal" | "vertical";
-  scrollRate?: number;
-  className?: string;
-};
+  direction?: 'horizontal' | 'vertical'
+  scrollRate?: number
+} & Omit<React.HTMLProps<HTMLDivElement>, 'onWheel'>
 
-declare function HorizontalScroll(props: Props): React.ReactElement;
+declare function Scrollbun(props: Props): React.ReactElement
 
-export default HorizontalScroll;
+export default Scrollbun
