@@ -1,5 +1,11 @@
 # x-scroll
 
+## 1.1.0
+
+### Minor Changes
+
+- 2568b56: pass div props, update readme
+
 ## 1.0.2
 
 ### Patch Changes
